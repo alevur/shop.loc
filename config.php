@@ -5,6 +5,9 @@ defined('VG_ACCESS') or die('Доступ запрещен');//запрет за
 const SITE_URL = 'http://shop.loc';
 const PATH = '/';
 
+/**
+ * Данные для подключения к БД
+ */
 const HOST = 'localhost';
 const USER = 'root';
 const PASS = 'root';
