@@ -1,0 +1,21 @@
+#отключение экранирования кавычек
+php_flag magic_quotes_gpc Off
+
+#кодировка по-умолчанию
+AddDefaultCharset utf-8
+
+#какой конкретно файл использовать для входа (меньше нагрузка на сервер)
+DirectoryIndex index.php
+
+#перенаправления всех запросов входа(Включаем modereWrite)
+RewriteEngine On
+
+#если запрос не является файлом
+RewriteCond &(REQUEST_FILENAME) !-f
+
+#если запрос не является папкой
+RewriteCond &(REQUEST_FILENAME) !-d
+
+#то перенаправить его на(в данном случае, в коревом каталоге)
+RewriteRule ^(.*) index.php
+
