@@ -22,3 +22,17 @@ const USER_CSS_JS = [ //пути к css и js файлам к пользоват
     'styles' => [],
     'scripts' => []
 ];
+
+
+/**
+ * Автозагрузка классов
+ * @ - ограничение на выдачу ошибок
+ * @throws Exception
+ */
+function autoloadMainClass($class_name)
+{
+    $class_name = str_replace('\\','/', $class_name);
+    if (!@include_once $class_name.'php') {
+        throw new Exception('Не верное имя файла - '. $class_name);
+    }
+}
